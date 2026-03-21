@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="43dc8ede-03cc-4ee7-bef8-e543810e7331" name="Changes" comment="" />
+    <list default="true" id="43dc8ede-03cc-4ee7-bef8-e543810e7331" name="Changes" comment="- Add `.dockerignore` and `.gitignore` files to exclude unnecessary files from version control and Docker context.&#10;- Implement core project structure, including initial route setup, reusable button component, and primary styling with Tailwind CSS.&#10;- Create a `Dockerfile` for multi-stage builds to streamline development and production environments.&#10;- Bootstrap Navbar component with conditional authentication logic and reusable Button integration." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -75,11 +75,62 @@
       <workItem from="1773908998915" duration="275000" />
       <workItem from="1773909290272" duration="96000" />
       <workItem from="1774066934321" duration="1646000" />
-      <workItem from="1774069387444" duration="4568000" />
+      <workItem from="1774069387444" duration="5144000" />
     </task>
+    <task id="LOCAL-00001" summary="- Add `.dockerignore` and `.gitignore` files to exclude unnecessary files from version control and Docker context.&#10;- Implement core project structure, including initial route setup, reusable button component, and primary styling with Tailwind CSS.&#10;- Create a `Dockerfile` for multi-stage builds to streamline development and production environments.&#10;- Bootstrap Navbar component with conditional authentication logic and reusable Button integration.">
+      <option name="closed" value="true" />
+      <created>1774081149264</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1774081149264</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="User">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="*" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="user">
+                    <value>
+                      <list>
+                        <option value="*" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="- Add `.dockerignore` and `.gitignore` files to exclude unnecessary files from version control and Docker context.&#10;- Implement core project structure, including initial route setup, reusable button component, and primary styling with Tailwind CSS.&#10;- Create a `Dockerfile` for multi-stage builds to streamline development and production environments.&#10;- Bootstrap Navbar component with conditional authentication logic and reusable Button integration." />
+    <option name="LAST_COMMIT_MESSAGE" value="- Add `.dockerignore` and `.gitignore` files to exclude unnecessary files from version control and Docker context.&#10;- Implement core project structure, including initial route setup, reusable button component, and primary styling with Tailwind CSS.&#10;- Create a `Dockerfile` for multi-stage builds to streamline development and production environments.&#10;- Bootstrap Navbar component with conditional authentication logic and reusable Button integration." />
   </component>
 </project>
