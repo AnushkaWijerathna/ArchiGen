@@ -9,6 +9,12 @@ import {
 
 import type { Route } from "./+types/root";
 import "./app.css";
+import {useEffect, useState} from "react";
+import {
+  getCurrentUser,
+  signIn as puterSignIn,
+  signOut as puterSignOut
+} from "../lib/puter.action";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -41,8 +47,55 @@ export function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 
+//👉 This is the initial/default value...AuthState = current user info 📄
+const DEFAULT_AUTH_STATE: AuthState = {
+  isSignedIn: false,
+  userName: null,
+  userId: null,
+};
+
 export default function App() {
-  return <Outlet />;
+
+  //AuthState is shared by all pages
+  const [authState, setAuthState] = useState<AuthState>(DEFAULT_AUTH_STATE);
+
+  const refreshAuth = async () => {
+    try {
+      const user = await getCurrentUser();
+      setAuthState({
+        isSignedIn : !!user, //If we get a user, then it is set to true, else false
+        userName : user?.username || null,
+        userId: user?.uuid || null,
+      });
+      return !!user;
+    }catch {
+      setAuthState(DEFAULT_AUTH_STATE);
+      return false;
+    }
+
+  }
+
+  //Load the most Recent User
+  useEffect(() => {
+    refreshAuth();
+  },[])
+
+  const signIn = async () => {
+    await puterSignIn();
+    return await refreshAuth(); //After signing in, refresh the auth state to get the updated user info
+  }
+
+  const signOut = async () => {
+    puterSignOut();
+    return await refreshAuth();//Same thing when Signing out
+  }
+  return (
+      <main className="min-h-screen bg-background text-foreground relative z-10">
+        <Outlet
+          context={{...authState, refreshAuth, signIn, signOut}}//Now I can use these functions in my pages
+        />
+      </main>
+      )
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {

@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="43dc8ede-03cc-4ee7-bef8-e543810e7331" name="Changes" comment="- Add `.dockerignore` and `.gitignore` files to exclude unnecessary files from version control and Docker context.&#10;- Implement core project structure, including initial route setup, reusable button component, and primary styling with Tailwind CSS.&#10;- Create a `Dockerfile` for multi-stage builds to streamline development and production environments.&#10;- Bootstrap Navbar component with conditional authentication logic and reusable Button integration." />
+    <list default="true" id="43dc8ede-03cc-4ee7-bef8-e543810e7331" name="Changes" comment="- Add `.dockerignore` and `.gitignore` files to exclude unnecessary files from version control and Docker context.&#10;- Implement core project structure, including initial route setup, reusable button component, and primary styling with Tailwind CSS.&#10;- Create a `Dockerfile` for multi-stage builds to streamline development and production environments.&#10;- Bootstrap Navbar component with conditional authentication logic and reusable Button integration.">
+      <change afterPath="$PROJECT_DIR$/lib/puter.action.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/type.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/root.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,12 +25,24 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "AnushkaWijerathna"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/AnushkaWijerathna/ArchiGen.git",
+    "accountId": "d202c4d4-2705-4bcb-b52b-07b930dbb4cd"
+  }
+}]]></component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="AISelfReview" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -75,7 +95,7 @@
       <workItem from="1773908998915" duration="275000" />
       <workItem from="1773909290272" duration="96000" />
       <workItem from="1774066934321" duration="1646000" />
-      <workItem from="1774069387444" duration="5375000" />
+      <workItem from="1774069387444" duration="11702000" />
     </task>
     <task id="LOCAL-00001" summary="- Add `.dockerignore` and `.gitignore` files to exclude unnecessary files from version control and Docker context.&#10;- Implement core project structure, including initial route setup, reusable button component, and primary styling with Tailwind CSS.&#10;- Create a `Dockerfile` for multi-stage builds to streamline development and production environments.&#10;- Bootstrap Navbar component with conditional authentication logic and reusable Button integration.">
       <option name="closed" value="true" />
@@ -93,7 +113,15 @@
       <option name="project" value="LOCAL" />
       <updated>1774081782533</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="- Add `.dockerignore` and `.gitignore` files to exclude unnecessary files from version control and Docker context.&#10;- Implement core project structure, including initial route setup, reusable button component, and primary styling with Tailwind CSS.&#10;- Create a `Dockerfile` for multi-stage builds to streamline development and production environments.&#10;- Bootstrap Navbar component with conditional authentication logic and reusable Button integration.">
+      <option name="closed" value="true" />
+      <created>1774081967492</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1774081967492</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
