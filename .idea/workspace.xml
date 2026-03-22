@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="43dc8ede-03cc-4ee7-bef8-e543810e7331" name="Changes" comment="- Add `.dockerignore` and `.gitignore` files to exclude unnecessary files from version control and Docker context.&#10;- Implement core project structure, including initial route setup, reusable button component, and primary styling with Tailwind CSS.&#10;- Create a `Dockerfile` for multi-stage builds to streamline development and production environments.&#10;- Bootstrap Navbar component with conditional authentication logic and reusable Button integration.">
-      <change afterPath="$PROJECT_DIR$/lib/puter.action.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/type.d.ts" afterDir="false" />
+    <list default="true" id="43dc8ede-03cc-4ee7-bef8-e543810e7331" name="Changes" comment="Integrate `@heyputer/puter.js` for authentication, implement global auth state management, and update Navbar to support login/logout via outlet context.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/root.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/home.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +90,7 @@
       <workItem from="1773908998915" duration="275000" />
       <workItem from="1773909290272" duration="96000" />
       <workItem from="1774066934321" duration="1646000" />
-      <workItem from="1774069387444" duration="11702000" />
+      <workItem from="1774069387444" duration="15878000" />
     </task>
     <task id="LOCAL-00001" summary="- Add `.dockerignore` and `.gitignore` files to exclude unnecessary files from version control and Docker context.&#10;- Implement core project structure, including initial route setup, reusable button component, and primary styling with Tailwind CSS.&#10;- Create a `Dockerfile` for multi-stage builds to streamline development and production environments.&#10;- Bootstrap Navbar component with conditional authentication logic and reusable Button integration.">
       <option name="closed" value="true" />
@@ -121,7 +116,15 @@
       <option name="project" value="LOCAL" />
       <updated>1774081967492</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Integrate `@heyputer/puter.js` for authentication, implement global auth state management, and update Navbar to support login/logout via outlet context.">
+      <option name="closed" value="true" />
+      <created>1774104310972</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1774104310972</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,6 +170,19 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="- Add `.dockerignore` and `.gitignore` files to exclude unnecessary files from version control and Docker context.&#10;- Implement core project structure, including initial route setup, reusable button component, and primary styling with Tailwind CSS.&#10;- Create a `Dockerfile` for multi-stage builds to streamline development and production environments.&#10;- Bootstrap Navbar component with conditional authentication logic and reusable Button integration." />
-    <option name="LAST_COMMIT_MESSAGE" value="- Add `.dockerignore` and `.gitignore` files to exclude unnecessary files from version control and Docker context.&#10;- Implement core project structure, including initial route setup, reusable button component, and primary styling with Tailwind CSS.&#10;- Create a `Dockerfile` for multi-stage builds to streamline development and production environments.&#10;- Bootstrap Navbar component with conditional authentication logic and reusable Button integration." />
+    <MESSAGE value="Integrate `@heyputer/puter.js` for authentication, implement global auth state management, and update Navbar to support login/logout via outlet context." />
+    <option name="LAST_COMMIT_MESSAGE" value="Integrate `@heyputer/puter.js` for authentication, implement global auth state management, and update Navbar to support login/logout via outlet context." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/app/routes/home.tsx</url>
+          <line>40</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
