@@ -2,8 +2,15 @@ import type { Route } from "./+types/home";
 import Navbar from "../../components/Navbar";
 import {ArrowRight, ArrowUpRight, Clock, Layers} from "lucide-react";
 import Button from "../../components/ui/Button";
+import Upload from "../../components/Upload";
+import {useNavigate} from "react-router";
 
 
+/**
+ * Provide route metadata for the Home route.
+ *
+ * @returns An array containing metadata objects that set the page `title` to "New React Router App" and the `description` meta tag to "Welcome to React Router!".
+ */
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "New React Router App" },
@@ -11,7 +18,23 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
+/**
+ * Render the Home page containing the hero, upload, and projects sections.
+ *
+ * When an upload completes, generates a new ID and navigates to `/visualizer/<id>`.
+ *
+ * @returns The Home page React element
+ */
 export default function Home() {
+    const navigate = useNavigate();
+
+    //👉 After upload finishes → generate an ID → go to a new page to view the result using the ID.
+    const handleUploadComplete = async (base64Data: string) => {
+        const newId = Date.now().toString();
+        navigate(`/visualizer/${newId}`);
+
+        return true;
+    }
   return (
       <div className="home">
       <Navbar/>
@@ -38,17 +61,16 @@ export default function Home() {
             </div>
 
             <div id="upload" className="upload-shell">
-                <div className="flex grid-overlay items-center justify-center">
-                    <div className="upload-card ">
-                        <div className="upload-head">
-                            <div className="upload-icon">
-                                <Layers className="icon" />
-                            </div>
-                            <h3>Upload your floor plan</h3>
-                            <p>Supports JPG, PNG, formats upto 10MB</p>
+                <div className="grid-overlay" />
+                <div className="upload-card">
+                    <div className="upload-head">
+                        <div className="upload-icon">
+                            <Layers className="icon" />
                         </div>
-                        <p className="text-black">Upload Images</p>
+                        <h3>Upload your floor plan</h3>
+                        <p>Supports JPG, PNG, formats upto 10MB</p>
                     </div>
+                    <Upload onComplete={handleUploadComplete}/>
                 </div>
             </div>
         </section>
