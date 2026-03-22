@@ -1,36 +1,55 @@
 import React, {useCallback, useEffect, useRef, useState} from 'react'
 import {useOutletContext} from "react-router";
 import {CheckCircle2, ImageIcon, UploadIcon} from "lucide-react";
-import {PROGRESS_INCREMENT, REDIRECT_DELAY_MS, PROGRESS_INTERVAL_MS} from "../lib/constants";
+import {
+    PROGRESS_INCREMENT,
+    REDIRECT_DELAY_MS,
+    PROGRESS_INTERVAL_MS,
+    MAX_FILE_SIZE_MB,
+    MAX_FILE_SIZE_BYTES,
+    ALLOWED_TYPES
+} from "../lib/constants";
 
 interface UploadProps {
     onComplete?: (base64Data: string) => void;
 }
 
+
 const Upload = ({ onComplete }: UploadProps) => {
     const [file, setFile] = useState<File | null>(null);
+    const [error, setError] = useState<string | null>(null);
     const [isDragging, setIsDragging] = useState(false);
     const [progress, setProgress] = useState(0);
-    const intervalRef = useRef<NodeJS.Timeout | null>(null);
-    const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+    const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+    const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
     const { isSignedIn } = useOutletContext<AuthContext>();
 
-    useEffect(() => {
-        return () => {
-            if (intervalRef.current) {
-                clearInterval(intervalRef.current);
-                intervalRef.current = null;
-            }
-            if (timeoutRef.current) {
-                clearTimeout(timeoutRef.current);
-                timeoutRef.current = null;
-            }
-        };
+    const clearTimers = useCallback(() => {
+        if (intervalRef.current) {
+            clearInterval(intervalRef.current);
+            intervalRef.current = null;
+        }
+        if (timeoutRef.current) {
+            clearTimeout(timeoutRef.current);
+            timeoutRef.current = null;
+        }
     }, []);
+
+    useEffect(() => {
+        return () => clearTimers();
+    }, [clearTimers]);
 
     const processFile = useCallback((file: File) => {
         if (!isSignedIn) return;
+
+        if (file.size > MAX_FILE_SIZE_BYTES) {
+            setError(`File is too large. Maximum size is ${MAX_FILE_SIZE_MB} MB.`);
+            return;
+        }
+
+        setError(null);
+        clearTimers();
 
         setFile(file);
         setProgress(0);
@@ -41,8 +60,10 @@ const Upload = ({ onComplete }: UploadProps) => {
             setProgress(0);
         };
         reader.onloadend = () => {
-            const base64Data = reader.result as string;
+            if (typeof reader.result !== 'string') return;
+            const base64Data = reader.result;
 
+            clearTimers();
             intervalRef.current = setInterval(() => {
                 setProgress((prev) => {
                     const next = prev + PROGRESS_INCREMENT;
@@ -90,8 +111,7 @@ const Upload = ({ onComplete }: UploadProps) => {
         if (!isSignedIn) return;
 
         const droppedFile = e.dataTransfer.files[0];
-        const allowedTypes = ['image/jpeg', 'image/png'];
-        if (droppedFile && allowedTypes.includes(droppedFile.type)) {
+        if (droppedFile && ALLOWED_TYPES.includes(droppedFile.type)) {
             processFile(droppedFile);
         }
     };
@@ -100,7 +120,7 @@ const Upload = ({ onComplete }: UploadProps) => {
         if (!isSignedIn) return;
 
         const selectedFile = e.target.files?.[0];
-        if (selectedFile) {
+        if (selectedFile && ALLOWED_TYPES.includes(selectedFile.type)) {
             processFile(selectedFile);
         }
     };
@@ -135,7 +155,11 @@ const Upload = ({ onComplete }: UploadProps) => {
                                 "Click to upload or just drag and drop"
                             ): ("Sign in or sign up with Puter to upload")}
                         </p>
-                        <p className="help">Maximum file size 50 MB.</p>
+                        {error ? (
+                            <p className="error-text text-red-500 text-xs mt-1 font-bold">{error}</p>
+                        ) : (
+                            <p className="help">Maximum file size {MAX_FILE_SIZE_MB} MB.</p>
+                        )}
                     </div>
                 </div>
             ) : (
