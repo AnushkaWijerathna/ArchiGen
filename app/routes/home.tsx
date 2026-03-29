@@ -9,6 +9,11 @@ import {useState} from "react";
 import {createProject} from "../../lib/puter.action";
 
 
+/**
+ * Provide route metadata for the page.
+ *
+ * @returns An array of route metadata objects: one setting the page title to "New React Router App" and one setting the description content to "Welcome to React Router!".
+ */
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "New React Router App" },
@@ -16,6 +21,12 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
+/**
+ * Handle completion of an image upload by creating a new project, persisting it, updating local state, and navigating to the visualizer for that project.
+ *
+ * @param base64Data - Base64-encoded image data to use as the project's source image
+ * @returns `true` if the project was saved and navigation occurred, `false` otherwise
+ */
 export default function Home() {
     const navigate = useNavigate();
 
