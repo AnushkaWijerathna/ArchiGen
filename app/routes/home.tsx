@@ -48,7 +48,7 @@ export default function Home() {
         }
 
         //Update UI state. Adds a new project to the top of the list.
-        setProjects((prev) => [ newItem,...prev]);
+        setProjects((prev) => [saved, ...prev]);
         navigate(`/visualizer/${newId}`,{
             state: {
                 initialImage:saved.sourceImage,
