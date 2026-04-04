@@ -1,97 +1,84 @@
-# Welcome to React Router!
+   
+  
+ArchiGen | AI-powered Architectural Visualization App
+I built this project step by step by following the detailed tutorial from the JavaScript Mastery YouTube channel as a self learnin project.
 
-A modern, production-ready template for building full-stack React applications using React Router.
+📋 Table of Contents
+✨ Introduction
+⚙️ Tech Stack
+🔋 Features
+🤸 Quick Start
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+✨ Introduction
+AI-powered architectural visualization SaaS built with React, TypeScript, and Puter. Use AI models from Claude to Gemini to transform 2D floor plans into photorealistic 3D renders with permanent hosting and persistent metadata. This project features 2D-to-3D photorealistic rendering, serverless workers, high-performance KV storage, and a global community feed.
 
-## Features
+⚙️ Tech Stack
+React is a popular JavaScript library for building user interfaces, specifically for creating single-page applications with a component-based architecture.
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+Vite is a next-generation frontend tool that provides an extremely fast development environment and optimized build process for modern web projects.
 
-## Getting Started
+TypeScript is a strongly typed superset of JavaScript that adds static types, helping developers catch errors early and write more maintainable code.
 
-### Installation
+TailwindCSS is a utility-first CSS framework that allows for rapid UI development by applying pre-defined classes directly in your markup.
 
-Install the dependencies:
+Puter is the underlying cloud computing platform and "Internet OS" that provides the infrastructure; including serverless Workers, permanent file storage, key-value (KV) databases, and hosted AI models.
 
-```bash
+Puter.js is the official JavaScript SDK that allows developers to interact with those cloud services directly from the frontend.
+
+CodeRabbit is an AI-powered code review platform that provides deep insights and automated suggestions to improve code quality and security.
+
+Junie by JetBRains is an AI-driven coding assistant integrated into the development environment to help automate complex logic, refactoring, and prompt engineering.
+
+Claude and Gemini are state-of-the-art large language models used to power the architectural transformation and image generation logic within the application.
+
+🔋 Features
+👉 2D-to-3D Visualization: Instant architectural rendering that transforms flat floor plans into photorealistic 3D models using state-of-the-art AI.
+
+👉 Persistent Media Hosting: Permanent file storage that generates public URLs for every upload and output, ensuring your renders are always accessible.
+
+👉 Dynamic Project Gallery: A personalized workspace that tracks your history of visualizations with instant loading and metadata persistence.
+
+👉 Side-by-Side Comparison: Interactive tools designed to visualize the direct transformation from a source architectural sketch to its AI-rendered counterpart.
+
+👉 Global Community Feed: A public discovery engine where users share their architectural projects with the world in a single click.
+
+👉 Privacy Controls: Granular public and private toggles that give users full authority over the visibility and security of their architectural data.
+
+👉 Ownership Mapping: A clean metadata system that tracks project details and user IDs across the entire platform for seamless account management.
+
+👉 Modern Export Functionality: High-performance tools to download and move AI-generated renders into real-world presentations and workflows.
+
+And many more, including code architecture and reusability.
+
+🤸 Quick Start
+Follow these steps to set up the project locally on your machine.
+
+Prerequisites
+
+Make sure you have the following installed on your machine:
+
+Git
+Node.js
+npm (Node Package Manager)
+Cloning the Repository
+
+git clone https://github.com/AnushkaWijerathna/ArchiGen
+cd ArchiGen
+Installation
+
+Install the project dependencies using npm:
+
 npm install
-```
+Set Up Environment Variables
 
-### Configuration
+Create a new file named .env in the root of your project and add the following content:
 
-Create a `.env.local` file in the root directory and add your Puter worker URL:
+VITE_PUTER_WORKER_URL=""
+Replace the placeholder values with your real credentials. You can get these by signing up at: Puter.com.
 
-```env
-VITE_PUTER_WORKER_URL=<your-puter-worker-url>
-```
+Running the Project
 
-### Development
-
-Start the development server with HMR:
-
-```bash
 npm run dev
-```
+Open http://localhost:3000 in your browser to view the project.
 
-Your application will be available at `http://localhost:5173`.
-
-## Building for Production
-
-Create a production build:
-
-```bash
-npm run build
-```
-
-## Deployment
-
-### Docker Deployment
-
-To build and run using Docker:
-
-```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
-```
-
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
-
----
-
-Built with ❤️ using React Router.
-
-We use putter to manage our backend AI.
+The ScreenShots of the application is inside Screenshots folder
