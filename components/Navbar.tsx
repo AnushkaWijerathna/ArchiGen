@@ -2,6 +2,7 @@ import React from "react";
 import {Box} from "lucide-react";
 import Button from "./ui/Button";
 import {useOutletContext} from "react-router";
+import ThemeToggle from "./ui/ThemeToggle";
 
 const Navbar = () => {
 
@@ -41,6 +42,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="actions">
+                <ThemeToggle />
                 {isSignedIn ? (
                     <>
                         <span className="greeting">
