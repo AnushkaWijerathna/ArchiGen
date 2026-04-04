@@ -24,6 +24,14 @@ Install the dependencies:
 npm install
 ```
 
+### Configuration
+
+Create a `.env.local` file in the root directory and add your Puter worker URL:
+
+```env
+VITE_PUTER_WORKER_URL=<your-puter-worker-url>
+```
+
 ### Development
 
 Start the development server with HMR:
