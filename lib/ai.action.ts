@@ -1,6 +1,7 @@
 import puter from "@heyputer/puter.js";
 import {ARCHIGEN_RENDER_PROMPT} from "./constants";
 
+
 export const fetchAsDataUrl = async (url: string): Promise<string> => {
     const response = await fetch(url);
 
