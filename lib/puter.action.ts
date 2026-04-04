@@ -92,9 +92,10 @@ export const createProject = async ({item,visibility = "private"}: CreateProject
          const data = (await response.json()) as { project?: DesignItem | null }
 
          return data?.project ?? null;
-         return payload;
+
      }catch (e) {
          console.log(`Failed to save project ${projectId}: ${e}`);
+         return null;
      }
 }
 
